@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #0a0a12;
+  color: #fff;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+}
+
+.logo {
+  height: 45px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.menu a {
+  color: #0ff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  color: #ff00ff;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.neon {
+  font-size: 3.5rem;
+  color: #0ff;
+  text-shadow: 0 0 10px #0ff, 0 0 25px #f0f;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { text-shadow: 0 0 10px #0ff; }
+  50% { text-shadow: 0 0 30px #ff00ff; }
+  100% { text-shadow: 0 0 10px #0ff; }
+}
+
+.btn {
+  margin-top: 30px;
+  padding: 15px 40px;
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(45deg, #0ff, #ff00ff);
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-6px) scale(1.05);
+}
+
+.galeria {
+  padding: 120px 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.item img {
+  width: 100%;
+  transition: 0.4s;
+}
+
+.item span {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 15px;
+  background: rgba(0,0,0,0.7);
+  text-align: center;
+  transform: translateY(100%);
+  transition: 0.4s;
+}
+
+.item:hover img {
+  transform: scale(1.1);
+}
+
+.item:hover span {
+  transform: translateY(0);
+}
+
+.depoimentos {
+  background: #111;
+  padding: 80px 40px;
+}
+
+.card {
+  background: #1c1c2b;
+  padding: 25px;
+  margin-top: 20px;
+  border-left: 4px solid #0ff;
+}
+
+footer {
+  background: #000;
+  padding: 30px;
+  text-align: center;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .neon {
+    font-size: 2.5rem;
+  }
+}
